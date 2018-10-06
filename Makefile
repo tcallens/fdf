@@ -6,7 +6,7 @@
 #    By: tcallens <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 08:30:21 by tcallens          #+#    #+#              #
-#    Updated: 2018/10/06 19:17:09 by tcallens         ###   ########.fr        #
+#    Updated: 2018/10/06 19:39:03 by tcallens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ $(NAME) : $(OBJ)
 	@echo "\t\t\t---------------------------------------"
 	@echo "\t\t\t|$(GREEN)++++++++++++++++SUCCES+++++++++++++++$(RESET)|"
 	@echo "\t\t\t---------------------------------------"
-	@echo "$(GREEN)\t\t\t--->     ft_ls has been built.     <---$(RESET)"
+	@echo "$(GREEN)\t\t\t--->      fdf has been built.     <---$(RESET)"
 	@$(CC) -o3 $(SRCS) $(INCLUDES) ./libft/libft.a -o $(NAME) $(FLAG)
 
 clean:
