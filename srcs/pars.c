@@ -6,7 +6,7 @@
 /*   By: tcallens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 15:55:43 by tcallens          #+#    #+#             */
-/*   Updated: 2018/10/21 03:54:36 by tcallens         ###   ########.fr       */
+/*   Updated: 2018/10/22 17:07:22 by tcallens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ t_fdf		*parsing(int fd, int y, t_fdf *fdf)
 		if (a == 0)
 			while (split[ret])
 				ret++;
-		tab[a] = fill_line(split, ret);
-		//free_tab(split);
+		tab[a++] = fill_line(split, ret);
+		free_split(split, ret);
 		ft_memdel((void **)&n_line);
-		a++;
 	}
+	ft_memdel((void **)&n_line);
 	fdf->map = tab;
 	fdf->max_x = ret;
 	return (fdf);

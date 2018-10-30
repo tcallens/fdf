@@ -6,7 +6,7 @@
 /*   By: tcallens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/05 15:08:34 by tcallens          #+#    #+#             */
-/*   Updated: 2018/10/06 18:33:02 by tcallens         ###   ########.fr       */
+/*   Updated: 2018/10/22 18:27:00 by tcallens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void	file_error(void)
 
 void	bad_map(int a)
 {
-	ft_intendl(a);
+	int	y;
+
+	y = a;
 	ft_putstr_fd("error : Map invalid\n", 2);
 	exit(EXIT_FAILURE);
 }
