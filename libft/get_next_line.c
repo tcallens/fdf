@@ -6,11 +6,11 @@
 /*   By: tcallens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/10 20:07:07 by tcallens          #+#    #+#             */
-/*   Updated: 2018/10/05 17:17:44 by tcallens         ###   ########.fr       */
+/*   Updated: 2018/03/26 20:04:57 by tcallens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static t_listt		*ft_manage(t_listt **list, int fd)
 {

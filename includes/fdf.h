@@ -6,7 +6,7 @@
 /*   By: tcallens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 18:01:19 by tcallens          #+#    #+#             */
-/*   Updated: 2018/10/21 04:28:17 by tcallens         ###   ########.fr       */
+/*   Updated: 2018/10/24 05:48:00 by tcallens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,69 +66,70 @@ typedef struct			s_fdf
 	int					edi;
 	int					px;
 	int					py;
+	int					co;
+	int					ha;
 }						t_fdf;
 
 /*
 ** ------------------------------- Fonction ------------------------------------
 */
 
-void				ttry(t_fdf *fdf);
-
 /*
 ** -=-=- utiles.c -=-=-
 */
 
-void				ini_mlx(t_fdf *fdf);
-void				n_image(t_fdf *fdf);
-void				pixel_to_img(t_fdf *fdf, int x, int y);
-
+void					ini_mlx(t_fdf *fdf);
+void					n_image(t_fdf *fdf);
+void					pixel_to_img(t_fdf *f, int x, int y);
+void					more_z(t_fdf *f);
 
 /*
 ** -=-=- draw.c -=-=-
 */
 
-void				set_coord_hor(t_point *p, t_fdf *f, int x, int y);
-void				set_coord_ver(t_point *p, t_fdf *f, int x, int y);
-void				set_coord(t_fdf *fdf, int x, int y);
-int					fill_img(t_fdf *fdf);
+void					set_coord_hor(t_point *p, t_fdf *f, int x, int y);
+void					set_coord_ver(t_point *p, t_fdf *f, int x, int y);
+void					set_coord(t_fdf *fdf, int x, int y);
+int						fill_img(t_fdf *f);
+void					find_color(t_fdf *f, int x, int y);
 
 /*
 ** -=-=- free.c -=-=-
 */
 
-//void			free_tab(char **str);
-//void			free_list(t_line **line, int x, int y);
+void					free_tab(int **tab, int may);
+void					free_split(char **tab, int max);
 
 /*
 ** -=-=- pars.c -=-=-
 */
 
-int				fill_coord_value(char *str);
-int				*fill_line(char **split, int max_x);
-t_fdf			*parsing(int fd, int y, t_fdf *fdf);
+int						fill_coord_value(char *str);
+int						*fill_line(char **split, int max_x);
+t_fdf					*parsing(int fd, int y, t_fdf *fdf);
 
 /*
 ** -=-=- check_valid.c -=-=-
 */
 
-int				check_hex(char *line);
-void			check_valid_line(char *line);
-int				check_valid_file(int fd);
+int						check_hex(char *line);
+int						check_valid_line(char *line);
+int						check_valid_file(int fd);
 
 /*
 ** -=-=- hook.c -=-=-
 */
 
-void			key_listener(int keycode, t_fdf *f);
-int				key_hook(int keycode, t_fdf *f);
+void					key_listener(int keycode, t_fdf *f);
+int						key_hook(int keycode, t_fdf *f);
 
 /*
 ** -=-=- error.c -=-=-
 */
 
-void			error_system(void);
-void			bad_map(int a);
-void			ac_error(void);
-void			file_error(void);
+void					error_system(void);
+void					bad_map(int a);
+void					ac_error(void);
+void					file_error(void);
 
 #endif

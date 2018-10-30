@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcallens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 23:14:44 by tcallens          #+#    #+#             */
-/*   Updated: 2018/09/25 02:44:08 by tcallens         ###   ########.fr       */
+/*   Created: 2018/01/12 18:29:43 by tcallens          #+#    #+#             */
+/*   Updated: 2018/10/22 17:23:03 by tcallens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include "libft.h"
 
-char	*ft_strjoin_free_s1(char const *s1, char const *s2)
+# define BUFF_SIZE 4096
+
+typedef struct		s_listt
 {
-	char	*fresh;
-	int		a;
-	int		b;
+	int				fd;
+	char			*content;
+	struct s_listt	*next;
+}					t_listt;
 
-	a = 0;
-	b = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	fresh = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (fresh == NULL)
-		return (NULL);
-	while (s1[a])
-	{
-		fresh[a] = s1[a];
-		a++;
-	}
-	while (s2[b])
-		fresh[a++] = s2[b++];
-	fresh[a] = '\0';
-	free(&s1);
-	return (fresh);
-}
+int					get_next_line(const int	fd, char **line);
+
+#endif

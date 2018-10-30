@@ -6,7 +6,7 @@
 /*   By: tcallens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 23:42:26 by tcallens          #+#    #+#             */
-/*   Updated: 2018/10/05 17:17:15 by tcallens         ###   ########.fr       */
+/*   Updated: 2018/10/22 17:22:24 by tcallens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,11 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 # define ISNBR(x) (x >= '0' && x <= '9')
 # define ISLOWER(x) (x >= 'a' && x <= 'z')
 # define ISUPPER(x) (x >= 'A' && x <= 'Z')
-# define BUFF_SIZE 10
-
-typedef struct		s_listt
-{
-	int				fd;
-	char			*content;
-	struct s_listt	*next;
-}					t_listt;
 
 typedef struct	s_list
 {
@@ -35,8 +28,6 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int				get_next_line(const int fd, char **line);
-char			*ft_strjoin_free_s1(char const *s1, char const *s2);
 int				ft_calctrim(char const *str);
 int				ft_fisblank(char c);
 void			ft_putchar(char c);

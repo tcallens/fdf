@@ -6,7 +6,7 @@
 #    By: tcallens <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 08:30:21 by tcallens          #+#    #+#              #
-#    Updated: 2018/10/21 04:27:03 by tcallens         ###   ########.fr        #
+#    Updated: 2018/10/22 18:21:17 by tcallens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,14 @@ SRCS = ./srcs/main.c\
 	   ./srcs/draw.c\
 	   ./srcs/utiles.c\
 	   ./srcs/hook.c\
+	   ./srcs/free.c\
 
 OBJ=$(SRC:.c=.o)
 
 LIB = libft
 MLX = miniLibX
 
-FLAG = -lmlx -framework OpenGL -framework AppKit -g3 -Wall -Wextra -Werror
+FLAG = -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
 
 RED = \033[1;31m
 GREEN = \033[1;32m
@@ -52,7 +53,6 @@ $(NAME) : $(OBJ)
 	@echo "\t\t\t|$(GREEN)+++++++++$(RESET)                            |"
 	@echo "\t\t\t---------------------------------------"
 	@echo "$(GREEN)\t\t\t\tlibft has been created.$(RESET)"
-	@make -C $(MLX)
 	@sleep 1
 	@clear
 	@echo "$(GREEN)\t\t\t\t     /|  ---   ---$(RESET)"
